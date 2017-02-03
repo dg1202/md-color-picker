@@ -397,7 +397,7 @@ angular.module('mdColorPicker', [])
 				openOnInput: '@',
 				hasBackdrop: '@',
 				clickOutsideToClose: '@',
-				skipHide: '@',
+				multiple: '@',
 				preserveScope: '@'
 			},
 			controller: ['$scope', '$element', '$mdDialog', '$mdColorPicker', function( $scope, $element, $mdDialog, $mdColorPicker ) {
@@ -444,7 +444,7 @@ angular.module('mdColorPicker', [])
 						clickOutsideToClose: $scope.clickOutsideToClose,
 						hasBackdrop: $scope.hasBackdrop,
 						preserveScope: $scope.preserveScope,
-						skipHide: $scope.skipHide
+						multiple: $scope.multiple
 					}).then(function( color ) {
 						$scope.value = color;
 					});
@@ -786,8 +786,8 @@ angular.module('mdColorPicker', [])
 				if (options.preserveScope === undefined)
 					options.preserveScope = false;
 
-				if (options.skipHide === undefined)
-					options.skipHide = false;
+				if (options.multiple === undefined)
+					options.multiple = false;
 
 
                 var dialog = $mdDialog.show({
@@ -802,7 +802,7 @@ angular.module('mdColorPicker', [])
 					hasBackdrop: options.hasBackdrop,
 					clickOutsideToClose: options.clickOutsideToClose,
 					preserveScope: options.preserveScope,
-					skipHide: options.skipHide,
+					multiple: options.multiple,
 					controller: ['$scope', 'value', 'defaultValue', 'random', function( $scope, value, defaultValue, random ) {
 
 							$scope.close = function close()
