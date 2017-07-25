@@ -775,7 +775,7 @@ angular.module('mdColorPicker', [])
                     options.hasBackdrop = true;
 
                 if (options.clickOutsideToClose === undefined)
-                    options.clickOutsideToClose = true;
+                    options.clickOutsideToClose = false;
 
                 if (options.defaultValue === undefined)
                     options.defaultValue = '#FFFFFF';
